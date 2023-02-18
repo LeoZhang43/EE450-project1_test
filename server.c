@@ -206,8 +206,8 @@ int main(void)
 		for (int i = 0; i < num_dept; i++) {
 			for (int j = 0; j < serverList[i].num_servers; j++) {
 				if(strcmp(serverList[i].servers[j], buf) == 0){
-					char* ans = "<Department Name> is found.";
-					if (send(new_fd, ans, strlen(ans), 0) == -1){
+					sprintf(sen, "%d", i + 1);
+					if (send(new_fd, sen, strlen(sen), 0) == -1){
 						perror("send");
 					}
 					flag = 0;
